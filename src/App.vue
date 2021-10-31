@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Header from './components/SongLibrary.vue'
+import Header from './components/SongsLibrary.vue'
 
 export default {
   name: 'App',
