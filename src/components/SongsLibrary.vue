@@ -1,15 +1,19 @@
 <template>
-    <header>
-        <h1>{{title}}</h1>
-        <Button text="Add New Song"/>
-    </header>
+    <div>
+        <h1>{{ title }}</h1>
+        <Button
+          @btn-click="$emit
+          ('toggle-add-song')"
+          text="Add New Song"
+        />
+    </div>
 </template>
 
 <script>
 import Button from './Button.vue'
 
 export default {
-  name: 'Header',
+  name: 'SongsLibrary',
   props: {
     title: String
   },
