@@ -61,6 +61,24 @@ export default {
         title: 'Evergreen',
         artist: 'Space Fighters',
         duration: '5:36'
+      },
+      {
+        id: 1,
+        title: 'Everlong',
+        artist: 'Foo Fighters',
+        duration: '4:36'
+      },
+      {
+        id: 2,
+        title: 'Toolong',
+        artist: 'Glue Fighters',
+        duration: '2:36'
+      },
+      {
+        id: 3,
+        title: 'Evergreen',
+        artist: 'Space Fighters',
+        duration: '5:36'
       }
     ]
   }
@@ -80,6 +98,10 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  padding: 20px;
 }
 
 #app {

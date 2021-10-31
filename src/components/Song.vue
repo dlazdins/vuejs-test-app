@@ -32,7 +32,7 @@ export default {
 
   .song {
     background: rgb(217, 218, 219);
-    margin: 20px;
+    margin: 10px;
     padding: 20px;
     cursor: pointer;
   }
