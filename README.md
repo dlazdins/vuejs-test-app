@@ -9,6 +9,10 @@ npm install
 ```
 npm run serve
 ```
+### Runs jason-db backend for development
+```
+npm run backend
+```
 
 ### Compiles and minifies for production
 ```
