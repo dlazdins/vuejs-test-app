@@ -8,6 +8,7 @@
 <script>
 export default {
   name: 'Song',
+  emits: ['delete-song'],
   props: {
     song: Object
   },

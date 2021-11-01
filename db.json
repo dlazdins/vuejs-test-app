@@ -1,0 +1,16 @@
+{
+  "songs": [
+    {
+      "id": 7527,
+      "title": "New Song",
+      "artist": "Test 1 artis",
+      "duration": "12:12"
+    },
+    {
+      "id": 7365,
+      "title": "NEw afe",
+      "artist": "423143",
+      "duration": "23:32"
+    }
+  ]
+}

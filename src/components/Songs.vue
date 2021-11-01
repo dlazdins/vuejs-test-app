@@ -27,12 +27,19 @@ import Song from './Song.vue'
 
 export default {
   name: 'Songs',
+  emits: ['delete-song'],
   props: {
     songs: Array
   },
   components: {
     Song
-  },
-  emits: ['delete-song']
+  }
 }
 </script>
+
+<style scoped>
+  th {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+</style>

@@ -18,27 +18,17 @@ export default {
       songs: []
     }
   },
-  created () {
-    this.songs = [
-      {
-        id: 1,
-        title: 'Everlong',
-        artist: 'Foo Fighters',
-        duration: '4:36'
-      },
-      {
-        id: 2,
-        title: 'Toolong',
-        artist: 'Glue Fighters',
-        duration: '2:36'
-      },
-      {
-        id: 3,
-        title: 'Evergreen',
-        artist: 'Space Fighters',
-        duration: '5:36'
-      }
-    ]
+  methods: {
+    async fetchSongs () {
+      const response = await fetch('api/songs')
+
+      const data = await response.json()
+
+      return data
+    }
+  },
+  async created () {
+    this.songs = await this.fetchSongs()
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="table-responsive">
-      <table class="table table-bordered tabel-striped">
+      <table class="table table-bordered tabel-striped table-hover">
           <thead>
             <tr class="text-center bg-info text-light">
               <th>#</th>
@@ -32,3 +32,10 @@ export default ({
   }
 })
 </script>
+
+<style scoped>
+  th {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+</style>

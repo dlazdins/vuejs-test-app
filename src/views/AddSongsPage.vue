@@ -35,52 +35,46 @@ export default {
     toggleAddSong () {
       this.showAddSong = !this.showAddSong
     },
-    addSong (song) {
-      this.songs = [...this.songs, song]
+    async addSong (song) {
+      const response = await fetch('api/songs', {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify(song)
+      })
+
+      const data = await response.json()
+
+      this.songs = [...this.songs, data]
     },
-    deleteSong (id) {
-      this.songs = this.songs.filter((song) => song.id !== id)
+    async deleteSong (id) {
+      if (confirm('Are you sure?')) {
+        const response = await fetch(`api/songs/${id}`, {
+          method: 'DELETE'
+        })
+        response.status === 200
+          ? (this.songs = this.songs.filter((song) => song.id !== id))
+          : alert('Error deleting song')
+      }
+    },
+    async fetchSongs () {
+      const response = await fetch('api/songs')
+
+      const data = await response.json()
+
+      return data
+    },
+    async fetchSong (id) {
+      const response = await fetch(`api/songs/${id}`)
+
+      const data = await response.json()
+
+      return data
     }
   },
-  created () {
-    this.songs = [
-      {
-        id: 1,
-        title: 'Everlong',
-        artist: 'Foo Fighters',
-        duration: '4:36'
-      },
-      {
-        id: 2,
-        title: 'Toolong',
-        artist: 'Glue Fighters',
-        duration: '2:36'
-      },
-      {
-        id: 3,
-        title: 'Evergreen',
-        artist: 'Space Fighters',
-        duration: '5:36'
-      },
-      {
-        id: 1,
-        title: 'Everlong',
-        artist: 'Foo Fighters',
-        duration: '4:36'
-      },
-      {
-        id: 2,
-        title: 'Toolong',
-        artist: 'Glue Fighters',
-        duration: '2:36'
-      },
-      {
-        id: 3,
-        title: 'Evergreen',
-        artist: 'Space Fighters',
-        duration: '5:36'
-      }
-    ]
+  async created () {
+    this.songs = await this.fetchSongs()
   }
 }
 </script>

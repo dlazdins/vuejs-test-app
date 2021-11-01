@@ -80,6 +80,8 @@ export default {
         this.title = ''
         this.artist = ''
         this.duration = ''
+
+        this.$emit('toggle-add-song')
       }
     },
     onClick () {
